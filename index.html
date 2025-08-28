@@ -51,7 +51,44 @@
             background: var(--primary-color);
             border-radius: 4px;
         }
-        
+            <script>
+    (function() {
+        // Simple carousel logic for testimonials
+        const grid = document.querySelector('#testimonials .testimonials-grid');
+        const cards = Array.from(grid.children);
+        let currentStart = 0;
+        let visible = 3;
+    
+        function updateVisible() {
+            // Update visible count for responsiveness
+            if (window.innerWidth < 768) visible = 1;
+            else if (window.innerWidth < 992) visible = 2;
+            else visible = 3;
+        }
+        updateVisible();
+        window.addEventListener('resize', () => {
+            updateVisible();
+            showCurrent();
+        });
+    
+        function showCurrent() {
+            cards.forEach((card, i) => {
+                card.style.display = (i >= currentStart && i < currentStart + visible) ? 'flex' : 'none';
+            });
+        }
+        showCurrent();
+    
+        document.querySelector('#testimonials .testimonial-nav.prev').onclick = function() {
+            currentStart = Math.max(0, currentStart - visible);
+            showCurrent();
+        };
+        document.querySelector('#testimonials .testimonial-nav.next').onclick = function() {
+            if (currentStart + visible < cards.length)
+                currentStart += visible;
+            showCurrent();
+        };
+    })();
+    </script>
         /* Navigation */
         .navbar {
             position: fixed;
