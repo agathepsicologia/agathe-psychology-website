@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agathe Primault - Psychologue Sanitaire | Thérapie Individuelle & Couples</title>
     <meta name="description" content="Psychologue sanitaire spécialisée en thérapie contextuelle-comportementale. Accompagnement thérapeutique pour adolescents, adultes et couples à Madrid.">
-    
+    <link rel="icon" type="image/svg+xml" href="logo blanc.svg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
@@ -36,6 +36,27 @@
             line-height: 1.6;
             color: var(--text-color);
             overflow-x: hidden;
+        }
+        
+         /* Logo personality animation */
+        .logo-img, .footer-logo-img {
+            width: 45px;
+            height: 45px;
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: 0 4px 18px rgba(74,144,164,0.13);
+            background: white;
+            border-radius: 12px;
+        }
+        .logo:hover .logo-img, .footer-logo:hover .footer-logo-img {
+            transform: rotate(-8deg) scale(1.11);
+            box-shadow: 0 8px 28px rgba(74,144,164,0.2);
+        }
+        .logo-tagline {
+            font-size: 0.9rem;
+            color: var(--primary-dark);
+            opacity: 0.8;
+            margin-left: 8px;
+            font-weight: 400;
         }
         
         /* Modern scrollbar */
@@ -1047,44 +1068,40 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">
-                <div class="logo-icon">🧠</div>
-                <div>
-                    <div>Agathe Psychologie</div>
-                    <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Psychologue Sanitaire</div>
-                </div>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#approach">Approche</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="cta-button">📅 Rendez-vous</a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-        </div>
-    </nav>
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="logo blanc.svg" alt="Logo Agathe Primault" class="logo-img" />
+                    <span>Agathe Primault</span>
+                    <span class="logo-tagline">Psychologue à Madrid</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#approach">Approche</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="Ouvrir le menu">&#9776;</button>
+            </div>
+        </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero" id="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Agathe Primault</h1>
-                <div class="hero-subtitle">Psychologue Sanitaire</div>
+                <h1>Bienvenu·e, je suis Agathe Primault</h1>
+                <div class="hero-subtitle">Psychologue sanitaire à Madrid</div>
                 <div class="hero-description">
-                    Accompagnement thérapeutique personnalisé pour adolescents, adultes et couples. 
-                    Créons ensemble un espace sûr pour votre transformation et votre bien-être.
+                    Thérapie individuelle et couples, spécialisée en approche contextuelle-comportementale.<br>
+                    Adolescents, adultes & couples - en français, anglais et espagnol.
                 </div>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">📅 Prendre rendez-vous</a>
-                    <a href="#services" class="btn btn-secondary">🔍 Découvrir mes services</a>
+                    <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
+                    <a href="#about" class="btn btn-secondary">En savoir plus</a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="hero-circle">
-                    <div class="hero-icon">🌱</div>
+                    <img src="logo blanc.svg" alt="Logo Agathe Primault" style="width: 185px; height: 185px; border-radius:50%; background: white; box-shadow: 0 2px 18px rgba(74,144,164,0.13);" />
                 </div>
             </div>
         </div>
@@ -1299,32 +1316,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+  <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <div class="logo-icon">🧠</div>
+                <img src="logo blanc.svg" alt="Logo Agathe Primault" class="footer-logo-img" />
                 <div>
-                    <h3>Agathe Psychologie</h3>
-                    <div class="footer-subtitle">Psychologue Sanitaire · M-40424</div>
+                  <h3>Agathe Primault</h3>
+                  <div class="footer-subtitle">Psychologue sanitaire à Madrid</div>
                 </div>
             </div>
-            
-            <p class="footer-description">Accompagnement thérapeutique spécialisé</p>
-            <p>Adolescents, Adultes & Couples</p>
-            
-            <div class="footer-specialties">
-                <div class="footer-tag">Thérapie Individuelle</div>
-                <div class="footer-tag">Thérapie de Couple</div>
-                <div class="footer-tag">Adolescents</div>
-                <div class="footer-tag">Anxiété</div>
-                <div class="footer-tag">Dépression</div>
-                <div class="footer-tag">Burn-out</div>
-                <div class="footer-tag">Estime de soi</div>
+            <div class="footer-description">
+                Accompagnement thérapeutique bienveillant pour adolescents, adultes et couples.
             </div>
-            
+            <div class="footer-specialties">
+                <span class="footer-tag">Thérapie contextuelle</span>
+                <span class="footer-tag">ACT / TCC</span>
+                <span class="footer-tag">Couples</span>
+                <span class="footer-tag">Adolescents</span>
+                <span class="footer-tag">Adultes</span>
+            </div>
             <div class="footer-bottom">
-                <p>© 2024 Agathe Psychologie. Tous droits réservés.</p>
-                <p>Consultations sur rendez-vous · Respect du secret professionnel</p>
+                &copy; 2025 Agathe Primault. Site réalisé avec ❤️ à Madrid.
             </div>
         </div>
     </footer>
