@@ -164,15 +164,163 @@
             box-shadow: var(--shadow-hover);
         }
         
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            cursor: pointer;
-            padding: 5px;
+        /* Testimonials Section Modern Styles */
+        .testimonials-section {
+            background: var(--light-bg);
         }
+        
+        .testimonials-carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            position: relative;
+            max-width: 100%;
+        }
+        
+        .testimonial-nav {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 0 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .testimonial-nav:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px) scale(1.07);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+        
+        /* Card style */
+        .testimonial-card {
+            background: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            padding: 40px 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: flex-start;
+            min-height: 320px;
+            position: relative;
+            transition: var(--transition);
+            border-top: 6px solid var(--primary-color);
+        }
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-6px) scale(1.025);
+        }
+        
+        .testimonial-quote {
+            font-size: 1.14rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            font-style: italic;
+            position: relative;
+            min-height: 96px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .quote-icon {
+            opacity: 0.15;
+            margin-right: 10px;
+        }
+        
+        .testimonial-meta {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+        .testimonial-avatar-gradient {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            padding: 2.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            color: var(--primary-color);
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(74, 144, 164, 0.07);
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--text-color);
+            font-size: 1.05rem;
+        }
+        .testimonial-details {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 2px 0 4px 0;
+        }
+        .testimonial-rating span {
+            color: #FFD600;
+            font-size: 1.1rem;
+            margin-right: 1px;
+        }
+        
+        @media (max-width: 992px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+            .testimonial-card {
+                min-height: 290px;
+            }
+        }
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .testimonial-card {
+                min-height: 220px;
+                padding: 28px 16px 20px 16px;
+            }
+            .testimonial-nav {
+                width: 38px;
+                height: 38px;
+                font-size: 1.3rem;
+            }
+                .mobile-menu-btn {
+                    display: none;
+                    background: none;
+                    border: none;
+                    font-size: 1.8rem;
+                    color: var(--primary-color);
+                    cursor: pointer;
+                    padding: 5px;
+                }
         
         /* Hero Section */
         .hero {
@@ -1263,168 +1411,187 @@
 </section>
 
 <!-- Testimonials Section -->
-<section id="testimonials" class="section">
+<section id="testimonials" class="section testimonials-section">
     <div class="container">
-        <div class="section-title">
+        <div class="section-header">
             <h2>💬 Témoignages Clients</h2>
             <p>Découvrez les expériences authentiques de personnes qui ont choisi mon accompagnement thérapeutique</p>
         </div>
-
-        <div class="testimonials-grid">
-            <div class="testimonial animate-on-scroll">
-                <div class="testimonial-text">
-                    "Agathe m'a aidée à surmonter une période très difficile de ma vie. Son approche empathique et professionnelle m'a permis de retrouver confiance en moi. Je recommande vivement ses services."
+        <div class="testimonials-carousel">
+            <button class="testimonial-nav prev" aria-label="Précédent">&#8592;</button>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"><text x="0" y="30" font-size="32" fill="#4a90a4">“</text></svg>
+                        <p>
+                            Agathe m'a aidée à surmonter une période très difficile de ma vie. Son approche empathique et professionnelle m'a permis de retrouver confiance en moi. Je recommande vivement ses services.
+                        </p>
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar-gradient">
+                            <div class="testimonial-avatar">M</div>
+                        </div>
+                        <div>
+                            <div class="testimonial-author">Marie, 34 ans</div>
+                            <div class="testimonial-details">Thérapie individuelle · 8 mois</div>
+                            <div class="testimonial-rating">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">M</div>
-                    <div>
-                        <div class="author-name">Marie, 34 ans</div>
-                        <div class="author-details">Thérapie individuelle · 8 mois</div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"><text x="0" y="30" font-size="32" fill="#4a90a4">“</text></svg>
+                        <p>
+                            Excellente professionnelle, grande capacité à créer un climat de confiance et de sécurité à travers une atmosphère détendue sans perdre le sérieux nécessaire. Je la recommande vivement !
+                        </p>
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar-gradient">
+                            <div class="testimonial-avatar">J</div>
+                        </div>
+                        <div>
+                            <div class="testimonial-author">Julien, 28 ans</div>
+                            <div class="testimonial-details">Gestion de l'anxiété · 6 mois</div>
+                            <div class="testimonial-rating">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"><text x="0" y="30" font-size="32" fill="#4a90a4">“</text></svg>
+                        <p>
+                            Elle comprend très très bien ce qui m'arrive. J'adore ça.
+                        </p>
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar-gradient">
+                            <div class="testimonial-avatar">J</div>
+                        </div>
+                        <div>
+                            <div class="testimonial-author">Julien, 28 ans</div>
+                            <div class="testimonial-details">Gestion de l'anxiété · 6 mois</div>
+                            <div class="testimonial-rating">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"><text x="0" y="30" font-size="32" fill="#4a90a4">“</text></svg>
+                        <p>
+                            Agathe est une professionnelle formidable ! En plus de me sentir à l'aise pendant ses séances, elle me fait comprendre comment aborder certains problèmes une fois le contexte analysé, ce que je trouve non seulement intéressant, mais qui m'aide aussi à voir les choses avec perspective, comme un processus qui demande du temps et de l'engagement. Je suis vraiment contente ! Et c'est pourquoi je recommande Agathe à 100 % :)
+                        </p>
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar-gradient">
+                            <div class="testimonial-avatar">J</div>
+                        </div>
+                        <div>
+                            <div class="testimonial-author">Julien, 28 ans</div>
+                            <div class="testimonial-details">Gestion de l'anxiété · 6 mois</div>
+                            <div class="testimonial-rating">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"><text x="0" y="30" font-size="32" fill="#4a90a4">“</text></svg>
+                        <p>
+                            Proximité et professionnalisme. Écoute active. L'enfant suivi se sent à l'aise.
+                        </p>
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar-gradient">
+                            <div class="testimonial-avatar">J</div>
+                        </div>
+                        <div>
+                            <div class="testimonial-details">Gestion de l'anxiété · 6 mois</div>
+                            <div class="testimonial-rating">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"><text x="0" y="30" font-size="32" fill="#4a90a4">“</text></svg>
+                        <p>
+                            Premier rendez-vous. Des explications précises sur la thérapie et les objectifs. Sur sa façon de travailler. Chaleur. Professionnalisme.
+                        </p>
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar-gradient">
+                            <div class="testimonial-avatar">J</div>
+                        </div>
+                        <div>
+                            <div class="testimonial-author">Julien, 28 ans</div>
+                            <div class="testimonial-details">Gestion de l'anxiété · 6 mois</div>
+                            <div class="testimonial-rating">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 7 -->
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"><text x="0" y="30" font-size="32" fill="#4a90a4">“</text></svg>
+                        <p>
+                            Je n'avais jamais fait de thérapie et l'expérience a été très positive, on ressent un équilibre mental nécessaire pour faire face à sa vie.
+                        </p>
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar-gradient">
+                            <div class="testimonial-avatar">J</div>
+                        </div>
+                        <div>
+                            <div class="testimonial-author">Julien, 28 ans</div>
+                            <div class="testimonial-details">Gestion de l'anxiété · 6 mois</div>
+                            <div class="testimonial-rating">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 8 -->
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"><text x="0" y="30" font-size="32" fill="#4a90a4">“</text></svg>
+                        <p>
+                            Génial, comme toujours. Je tiens à souligner son approche chaleureuse, son empathie et son enthousiasme à aider.
+                        </p>
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar-gradient">
+                            <div class="testimonial-avatar">S&amp;L</div>
+                        </div>
+                        <div>
+                            <div class="testimonial-author">Sophie &amp; Lucas</div>
+                            <div class="testimonial-details">Thérapie de couple · 10 mois</div>
+                            <div class="testimonial-rating">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="testimonial animate-on-scroll">
-                <div class="testimonial-text">
-                    "Excellente professionnelle, grande capacité à créer un climat de confiance et de sécurité à travers une atmosphère détendue sans perdre le sérieux nécessaire. Je la recommande vivement !"
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">J</div>
-                    <div>
-                        <div class="author-name">Julien, 28 ans</div>
-                        <div class="author-details">Gestion de l'anxiété · 6 mois</div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial animate-on-scroll">
-                <div class="testimonial-text">
-                    "Elle comprend très très bien ce qui m'arrive. J'adore ça."
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">J</div>
-                    <div>
-                        <div class="author-name">Julien, 28 ans</div>
-                        <div class="author-details">Gestion de l'anxiété · 6 mois</div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial animate-on-scroll">
-                <div class="testimonial-text">
-                    "Agathe est une professionnelle formidable ! En plus de me sentir à l'aise pendant ses séances, elle me fait comprendre comment aborder certains problèmes une fois le contexte analysé, ce que je trouve non seulement intéressant, mais qui m'aide aussi à voir les choses avec perspective, comme un processus qui demande du temps et de l'engagement. Je suis vraiment contente ! Et c'est pourquoi je recommande Agathe à 100 % :)"
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">J</div>
-                    <div>
-                        <div class="author-name">Julien, 28 ans</div>
-                        <div class="author-details">Gestion de l'anxiété · 6 mois</div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial animate-on-scroll">
-                <div class="testimonial-text">
-                    "Proximité et professionnalisme. Écoute active. L'enfant suivi se sent à l'aise."
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">J</div>
-                    <div>
-                        <div class="author-details">Gestion de l'anxiété · 6 mois</div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial animate-on-scroll">
-                <div class="testimonial-text">
-                    "Premier rendez-vous. Des explications précises sur la thérapie et les objectifs. Sur sa façon de travailler. Chaleur. Professionnalisme."
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">J</div>
-                    <div>
-                        <div class="author-name">Julien, 28 ans</div>
-                        <div class="author-details">Gestion de l'anxiété · 6 mois</div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial animate-on-scroll">
-                <div class="testimonial-text">
-                    "Je n'avais jamais fait de thérapie et l'expérience a été très positive, on ressent un équilibre mental nécessaire pour faire face à sa vie."
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">J</div>
-                    <div>
-                        <div class="author-name">Julien, 28 ans</div>
-                        <div class="author-details">Gestion de l'anxiété · 6 mois</div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial animate-on-scroll">
-                <div class="testimonial-text">
-                    "Génial, comme toujours. Je tiens à souligner son approche chaleureuse, son empathie et son enthousiasme à aider."
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">S&L</div>
-                    <div>
-                        <div class="author-name">Sophie & Lucas</div>
-                        <div class="author-details">Thérapie de couple · 10 mois</div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button class="testimonial-nav next" aria-label="Suivant">&#8594;</button>
         </div>
+    </div>
+</section>
 
         <!-- Stats Section -->
         <div style="background: linear-gradient(135deg, #4a90a4 0%, #5ba0b5 100%); color: white; padding: 50px; border-radius: 20px; margin: 60px 0; text-align: center;">
